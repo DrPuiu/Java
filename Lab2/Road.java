@@ -5,7 +5,8 @@ public class Road {
     private Location location1;
     private Location location2;
     private RoadType type;
-
+    
+    //cream constructorul repectiv getterii si setterii necesari
     public Road(int lenght, int speedlimit, Location location1, Location location2, RoadType type) {
         this.lenght = lenght;
         this.speedlimit = speedlimit;
@@ -53,7 +54,8 @@ public class Road {
     public void setType(RoadType type) {
         this.type = type;
     }
-
+    
+    //folosind Override cream metoda toString pentru clasa Road
     @Override
     public String toString() {
         return "Road{" +
