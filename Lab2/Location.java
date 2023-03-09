@@ -4,7 +4,7 @@ public class Location {
     public int CoordonateY;
     private LocationType locationType;
 
-
+    //cream constructorul, repectiv getterii si setterii necesari
     public Location(String name, int coordonateX, int coordonateY, LocationType locationType) {
         this.name = name;
         CoordonateX = coordonateX;
@@ -44,6 +44,7 @@ public class Location {
         this.locationType = locationType;
     }
 
+    //folosind override cream metoda toString pentru Location
     @Override
     public String toString() {
         return "Location{" +
