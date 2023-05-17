@@ -5,7 +5,13 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Album")
+@Table(name = "\"Album\"")
+@NamedQueries({
+
+        @NamedQuery(name = "Album.findByName",
+                query = "SELECT a FROM Album a WHERE a.title = :title")
+
+})
 public class Album {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -70,6 +76,17 @@ public class Album {
         if (o == null || getClass() != o.getClass()) return false;
         Album album = (Album) o;
         return id == album.id && releaseYear == album.releaseYear && Objects.equals(title, album.title) && Objects.equals(artist, album.artist) && Objects.equals(genres, album.genres);
+    }
+
+    @Override
+    public String toString() {
+        return "Album{" +
+                "id=" + id +
+                ", releaseYear=" + releaseYear +
+                ", title='" + title + '\'' +
+                ", artist='" + artist + '\'' +
+                ", genres='" + genres + '\'' +
+                '}';
     }
 
     @Override

@@ -5,14 +5,13 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name="Artists")
+@Table(name="\"artists\"")
 @NamedQueries({
 
         @NamedQuery(name = "Artist.findByName",
-                query = "SELECT a FROM Artists a WHERE a.name = :name"),
+                query = "SELECT a FROM Artists a WHERE a.name = :name")
 
-        @NamedQuery(name = "Artist.findById",
-                query = "SELECT a FROM Artists a WHERE a.id = :id")
+
 })
 public class Artists {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
