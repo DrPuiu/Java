@@ -1,0 +1,48 @@
+UniversityResources: Evidenta salilor/resurselor unei universitati [Repartizarea eficienta a evenimentelor din orar - Graph Coloring Applications]
+Pe partea de BackEnd avem urmatoarele pachete cu clasele ce urmeaza:
+  Model:
+   Event: - variabile: name, type, start, end, size, weekday, group
+                - metode: constructor, getteri, setteri, toString
+   EventType - enum cu 3 elemente: LECTURE, LABORATORY, SEMINAR
+   Room: - variabile: name, type, size, floor
+          - metode: constructor, getteri, setteri, toString
+   RoomType: - enum cu 3 elemente: LECTURE_HALL, COMPUTER_LAB, CLASSROOM
+   Problem - contine inputul algoritmului de colorare : orarul(lista de evenimente) si resursele facultatii (lista de sali)
+            - variabile: events, rooms
+            - metode: constructor, getteri, setteri, toString
+   Solution - contine solutia oferita de algoritmul greedy sub forma unui map event->room
+             - variabile: soltuia de tip map
+             - metode: constructor, getteri, setteri, toString, addPair(adauga o pereche event-room in solutie)
+           
+  Algorithm:
+      Greedy - clasele care ofera solutie la problema
+                     - variabile: problem, solution,
+                                  lectures (evenimentele de tip curs),
+                                  labs (evenimnetele de tip laborator),
+                                  seminars (evenimentele de tip seminar),
+                                  lectureHalls (salile de tip amfiteatru),
+                                  computerLabs (salilte de tip laborator),
+                                  classRooms (salile de tip seminar)
+                     - metode: constructor,
+                               computeSolution: apeleaza la crearea listelor de adiacenta si la colorarea grafrilor
+                               separateEvents: separa evenimnetele in functie de tipul lor
+                               separateRooms: separa salile in funtie de tipul lor
+                               createAdjacencyList: creeaza listele de adiacenta
+                               intersect: stabileste daca 2 evenimente se intersecteaza
+                               colorGraph: realizeaza colorarea grafului (cu alg Greedy)
+                 
+     Input: -clasa CSVReader functie ce citeste din fisierele Events.csv si rooms.csv                  
+                  
+Pe partea de FrontEnd avem urmatoarele clase:
+ 	-GUIApplication ce creeaza stage urile din interfata grafica 
+	-GUIController ce are rolul de a controla interacțiunea între interfața grafică a aplicației și logica din spatele acesteia. Este o clasă de controler specifică pentru o aplicație JavaFX.  
+   
+  
+La resurse avem: 
+	-fisierele Rooms.csv si Events.csv ce contin input urile pentru problema, cu clasele inclusiv even uri introduse manual
+  
+                   
+         
+                                        
+                   
+  
